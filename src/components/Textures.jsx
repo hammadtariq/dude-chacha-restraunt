@@ -1,3 +1,4 @@
+import './Textures.css';
 
 export default function Textures() {
 
@@ -24,20 +25,20 @@ return (
 <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
 
 <div className="group relative rounded-3xl overflow-hidden bg-charcoal-surface border border-white/10 hover:border-primary/50 transition-all duration-700 reveal-item is-visible">
-<div className="relative h-[480px] md:h-[620px] w-full overflow-hidden">
+<div className="food-card relative h-[480px] md:h-[620px] w-full overflow-hidden">
 <img alt="Ultra high definition extreme macro close-up photography of rich Pakistani Burns Road Nihari curry, glistening spiced deep red aromatic gravy (roghan), tender succulent beef shank marrow bone, garnished with razor-thin julienned fresh ginger, chopped vibrant cilantro, and lemon wedge." className="w-full h-full object-cover transform scale-105 group-hover:scale-115 transition-transform duration-1000 ease-out" loading="lazy" decoding="async" src="/nihari-refined.png" width="1536" height="1024" />
 <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/10 to-transparent"></div>
 
-<div className="absolute top-8 left-8 flex items-center gap-3 p-2.5 pr-4 rounded-full glass-editorial-dark border border-primary/30">
+<div className="food-card-tags"><div className="food-card-tag flex items-center gap-3 p-2.5 pr-4 rounded-full glass-editorial-dark border border-primary/30">
 <span className="w-3 h-3 rounded-full bg-primary pulse-ring"></span>
 <span className="font-label-caps text-[10px] tracking-widest text-primary font-bold">MACRO ZOOM: ROGHAN GRAVY &amp; SHANK</span>
 </div>
 
-<div className="absolute top-8 right-8 px-3 py-1 rounded-full bg-black/60 backdrop-blur-md border border-white/10 font-label-numeric text-xs text-secondary">
+<div className="food-card-duration px-3 py-1 rounded-full bg-black/60 backdrop-blur-md border border-white/10 font-label-numeric text-xs text-secondary">
                 8-HR REDUCTION
-              </div>
+              </div></div>
 
-<div className="absolute bottom-8 left-8 right-8 space-y-4">
+<div className="food-card-content absolute bottom-8 left-8 right-8 space-y-4">
 <div className="flex items-center justify-between">
 <span className="font-label-caps text-xs tracking-[0.25em] text-secondary">BURNS ROAD NIHARI GRAVY SPEC</span>
 <span className="font-label-numeric text-sm text-on-surface">5–6 SERVINGS FROM $77</span>
@@ -59,20 +60,20 @@ return (
 </div>
 
 <div className="group relative rounded-3xl overflow-hidden bg-charcoal-surface border border-white/10 hover:border-secondary/50 transition-all duration-700 reveal-item is-visible">
-<div className="relative h-[480px] md:h-[620px] w-full overflow-hidden">
+<div className="food-card relative h-[480px] md:h-[620px] w-full overflow-hidden">
 <img alt="Ultra high definition macro close-up cinematic food photograph of authentic Karachi Biryani in a dark rustic hammered brass pot, long delicate aged basmati rice grains individually visible, infused with deep saffron orange and yellow hues, tender spiced meat, caramelized golden onions, star anise and cardamom pod spices, steam wisps." className="w-full h-full object-cover transform scale-105 group-hover:scale-115 transition-transform duration-1000 ease-out" loading="lazy" decoding="async" src="/biryani-refined.png" width="1536" height="1024" />
 <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/10 to-transparent"></div>
 
-<div className="absolute top-8 left-8 flex items-center gap-3 p-2.5 pr-4 rounded-full glass-editorial-dark border border-secondary/30">
+<div className="food-card-tags"><div className="food-card-tag flex items-center gap-3 p-2.5 pr-4 rounded-full glass-editorial-dark border border-secondary/30">
 <span className="w-3 h-3 rounded-full bg-secondary pulse-ring"></span>
 <span className="font-label-caps text-[10px] tracking-widest text-secondary font-bold">MACRO ZOOM: EXTRA LONG BASMATI &amp; SAFFRON</span>
 </div>
 
-<div className="absolute top-8 right-8 px-3 py-1 rounded-full bg-black/60 backdrop-blur-md border border-white/10 font-label-numeric text-xs text-secondary">
+<div className="food-card-duration px-3 py-1 rounded-full bg-black/60 backdrop-blur-md border border-white/10 font-label-numeric text-xs text-secondary">
                 DUM-COOKED BRASS POT
-              </div>
+              </div></div>
 
-<div className="absolute bottom-8 left-8 right-8 space-y-4">
+<div className="food-card-content absolute bottom-8 left-8 right-8 space-y-4">
 <div className="flex items-center justify-between">
 <span className="font-label-caps text-xs tracking-[0.25em] text-secondary">BOHRA-STYLE KARACHI DUM</span>
 <span className="font-label-numeric text-sm text-on-surface">5–6 SERVINGS · $71</span>

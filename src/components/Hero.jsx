@@ -25,19 +25,19 @@ export default function Hero() {
 <div className="hero-content max-w-[1520px] mx-auto w-full my-auto py-12 md:py-20 z-10 relative">
   <div className="max-w-5xl space-y-8">
     <div>
-      <span className="block font-label-caps text-xs tracking-[0.4em] text-secondary uppercase mb-6">ORIGINAL BURNS ROAD ARCHIVE</span>
+      <span style={{ '--i': 0 }} className="hero-enter block font-label-caps text-xs tracking-[0.4em] text-secondary uppercase mb-6">ORIGINAL BURNS ROAD ARCHIVE</span>
       <h1 id="hero-title" className="text-6xl sm:text-7xl md:text-8xl lg:text-9xl font-display-hero font-black tracking-tight leading-[0.88] text-on-surface mb-8">
-        <span className="block uppercase">KARACHI.</span>
-        <span className="block italic font-quote-italic font-normal text-secondary">Distilled.</span>
+        <span style={{ '--i': 1 }} className="hero-enter block uppercase">KARACHI.</span>
+        <span style={{ '--i': 2 }} className="hero-enter block italic font-quote-italic font-normal text-secondary">Distilled.</span>
       </h1>
     </div>
 
-    <p className="text-lg sm:text-xl md:text-2xl text-on-surface-variant font-light max-w-2xl leading-relaxed tracking-wide font-body-lg">
+    <p style={{ '--i': 3 }} className="hero-enter text-lg sm:text-xl md:text-2xl text-on-surface-variant font-light max-w-2xl leading-relaxed tracking-wide font-body-lg">
       Artisanal communal dawats slow-crafted overnight by Chef Noman. No shortcuts, no pre-made bases—pure culinary heritage for 6+ guests.
     </p>
 
     
-    <div className="pt-4 flex flex-wrap items-center gap-6 md:gap-8">
+    <div style={{ '--i': 4 }} className="hero-enter pt-4 flex flex-wrap items-center gap-6 md:gap-8">
       <a className="group flex items-center gap-4 px-8 py-4 rounded-full bg-primary text-on-primary hover:bg-primary-container hover:text-on-primary-container transition-all shadow-[0_12px_35px_rgba(255,181,161,0.2)] font-label-caps text-xs tracking-[0.2em] uppercase font-bold" href="https://wa.me/13063071379" rel="noopener noreferrer" target="_blank">
         <span className="">ORDER VIA WHATSAPP</span>
         <span aria-hidden="true" className="material-symbols-outlined text-base group-hover:translate-x-1 transition-transform">east</span>

@@ -56,7 +56,7 @@ return (
 
 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
 
-<div className="p-8 rounded-3xl bg-surface-container border border-white/10 hover:border-primary transition-all duration-500 flex flex-col justify-between">
+<div className="p-8 rounded-3xl bg-surface-container border border-white/10 hover:border-primary transition-all duration-500 flex flex-col justify-between reveal-item is-visible">
 <div className="space-y-4">
 <div className="flex items-center justify-between">
 <span className="font-label-caps text-[10px] tracking-widest text-secondary uppercase">ISLAMIC OCCASION</span>
@@ -73,7 +73,7 @@ return (
 </div>
 </div>
 
-<div className="p-8 rounded-3xl bg-surface-container border border-white/10 hover:border-secondary transition-all duration-500 flex flex-col justify-between">
+<div className="p-8 rounded-3xl bg-surface-container border border-white/10 hover:border-secondary transition-all duration-500 flex flex-col justify-between reveal-item is-visible">
 <div className="space-y-4">
 <div className="flex items-center justify-between">
 <span className="font-label-caps text-[10px] tracking-widest text-secondary uppercase">ROYAL DAWAT</span>
@@ -90,7 +90,7 @@ return (
 </div>
 </div>
 
-<div className="p-8 rounded-3xl bg-surface-container border border-white/10 hover:border-primary transition-all duration-500 flex flex-col justify-between">
+<div className="p-8 rounded-3xl bg-surface-container border border-white/10 hover:border-primary transition-all duration-500 flex flex-col justify-between reveal-item is-visible">
 <div className="space-y-4">
 <div className="flex items-center justify-between">
 <span className="font-label-caps text-[10px] tracking-widest text-secondary uppercase">CELEBRATION</span>
@@ -107,7 +107,7 @@ return (
 </div>
 </div>
 
-<div className="p-8 rounded-3xl bg-surface-container border border-white/10 hover:border-secondary transition-all duration-500 flex flex-col justify-between">
+<div className="p-8 rounded-3xl bg-surface-container border border-white/10 hover:border-secondary transition-all duration-500 flex flex-col justify-between reveal-item is-visible">
 <div className="space-y-4">
 <div className="flex items-center justify-between">
 <span className="font-label-caps text-[10px] tracking-widest text-secondary uppercase">CANADIAN HOLIDAY</span>

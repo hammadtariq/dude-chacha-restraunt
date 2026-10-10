@@ -5,7 +5,7 @@
 #hero-manifesto p { text-wrap: pretty; }
 #hero-manifesto a { min-height: 44px; }
 #hero-manifesto a[href^="https://wa.me"] { box-shadow: 0 8px 24px rgba(0,0,0,.12); }
-#hero-manifesto a:active { transform: translateY(1px); }
+#hero-manifesto a:active { transform: scale(0.97); }
 #hero-manifesto > div:last-child { width: calc(100% + 3rem); }
 html[data-theme="light"] #hero-manifesto {
  --hero-gold: #98621e;

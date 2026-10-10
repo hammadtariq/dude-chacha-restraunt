@@ -6,7 +6,9 @@ import MenuCourse1 from './MenuCourse1';
 import { useState } from 'react';
 
 export default function MasterMenu() {
-const [category, setCategory] = useState('all');
+const [category, setCategoryRaw] = useState('all');
+const [switched, setSwitched] = useState(false);
+const setCategory = next => { setSwitched(true); setCategoryRaw(next); };
 return (
 <section className="py-28 px-6 md:px-12 max-w-[1520px] mx-auto border-b border-white/[0.08]" id="master-menu">
 <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-8 mb-16 reveal-item is-visible">
@@ -67,7 +69,7 @@ return (
 </div>
 
 
-<div className="space-y-20" id="dishesGrid">
+<div key={category} className={`space-y-20${switched ? ' menu-switch' : ''}`} id="dishesGrid">
   
   
   {(category === "all" || category === "traditional") && <MenuCourse1 />}

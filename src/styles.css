@@ -57,15 +57,59 @@
       border: 1px solid rgba(253, 186, 69, 0.15);
     }
 
-    /* Reveal animations */
+    /* Shared motion vocabulary */
+    :root {
+      --ease-out: cubic-bezier(0.23, 1, 0.32, 1);
+      --ease-in-out: cubic-bezier(0.77, 0, 0.175, 1);
+    }
+
+    /* Reveal animations (border-color keeps card hover feedback that this rule would otherwise override) */
     .reveal-item {
       opacity: 0;
-      transform: translateY(34px);
-      transition: opacity 0.85s cubic-bezier(0.16, 1, 0.3, 1), transform 0.85s cubic-bezier(0.16, 1, 0.3, 1);
+      transform: translateY(24px);
+      transition: opacity 600ms var(--ease-out), transform 600ms var(--ease-out), border-color 250ms ease;
     }
     .reveal-item.is-visible {
       opacity: 1;
       transform: translateY(0);
+    }
+    /* Sibling cards cascade in; only where they sit side by side. */
+    @media (min-width: 768px) {
+      .reveal-item:nth-child(2) { transition-delay: 60ms, 60ms, 0s; }
+      .reveal-item:nth-child(3) { transition-delay: 120ms, 120ms, 0s; }
+      .reveal-item:nth-child(4) { transition-delay: 180ms, 180ms, 0s; }
+    }
+
+    /* Load choreography: runs once per visit. `backwards` fill so :active/hover transforms still win afterwards. */
+    @keyframes enter-up {
+      from { opacity: 0; transform: translateY(14px); }
+    }
+    @keyframes enter-down {
+      from { opacity: 0; transform: translateY(-10px); }
+    }
+    .hero-enter {
+      animation: enter-up 520ms var(--ease-out) backwards;
+      animation-delay: calc(var(--i, 0) * 60ms + 80ms);
+    }
+    .nav-enter { animation: enter-down 450ms var(--ease-out) 60ms backwards; }
+    .concierge-enter { animation: enter-up 450ms var(--ease-out) 900ms backwards; }
+
+    /* Menu category switch: new courses bridge in instead of teleporting. */
+    @keyframes menu-enter {
+      from { opacity: 0; transform: translateY(10px); }
+    }
+    .menu-switch > .dish-card { animation: menu-enter 240ms var(--ease-out) backwards; }
+    .menu-switch > .dish-card:nth-child(2) { animation-delay: 50ms; }
+    .menu-switch > .dish-card:nth-child(3) { animation-delay: 100ms; }
+    .menu-switch > .dish-card:nth-child(4) { animation-delay: 150ms; }
+    .menu-switch > .dish-card:nth-child(5) { animation-delay: 200ms; }
+
+    /* Press feedback on every pill button/link. */
+    a.rounded-full, button.rounded-full, .filter-tab, .theme-toggle {
+      transition: transform 160ms var(--ease-out), background-color 200ms ease, color 200ms ease, border-color 200ms ease, box-shadow 200ms ease, opacity 200ms ease;
+    }
+    a.rounded-full:active, button.rounded-full:active, .filter-tab:active, .theme-toggle:active {
+      transform: scale(0.97);
     }
 
     /* Lens highlight pulse */
@@ -90,7 +134,10 @@ html { scroll-behavior: smooth; scroll-padding-top: 6rem; }
 @media (prefers-reduced-motion: reduce) {
  html { scroll-behavior: auto; }
  *, *::before, *::after { animation: none !important; transition: none !important; }
- .reveal-item { opacity: 1; transform: none; }
+ /* Reduced, not removed: keep short opacity fades that aid comprehension, drop all movement. */
+ @keyframes fade-in { from { opacity: 0; } }
+ .reveal-item { transform: none; transition: opacity 200ms ease !important; }
+ .hero-enter, .nav-enter, .concierge-enter, .menu-switch > .dish-card { animation: fade-in 200ms ease backwards !important; animation-delay: 0s !important; }
 }
 
 @layer base { *, ::before, ::after { border-color: currentColor; } }
