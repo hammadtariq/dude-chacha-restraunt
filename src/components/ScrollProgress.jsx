@@ -1,0 +1,4 @@
+import { useEffect, useState } from 'react';
+export default function ScrollProgress() { const [progress, setProgress] = useState(0); useEffect(() => { const update = () => { const height = document.documentElement.scrollHeight - window.innerHeight; setProgress(height > 0 ? window.scrollY / height * 100 : 0); }; update(); window.addEventListener('scroll', update, { passive: true }); window.addEventListener('resize', update); return () => { window.removeEventListener('scroll', update); window.removeEventListener('resize', update); }; }, []); return (<div className="fixed top-0 left-0 right-0 h-1 bg-surface-container-lowest z-[100]">
+<div className="h-full bg-gradient-to-r from-secondary via-primary to-primary-container" style={{ width: `${progress}%` }} />
+</div>); }

@@ -1,0 +1,65 @@
+/* Restore the original cinematic composition; polish only its readability and rhythm. */
+#hero-manifesto { --hero-gold: #fdba45; }
+#hero-manifesto .hero-dark-overlay { background: linear-gradient(90deg, rgba(16,14,12,.96) 0%, rgba(16,14,12,.88) 30%, rgba(16,14,12,.70) 44%, rgba(16,14,12,.32) 66%, rgba(16,14,12,.18) 100%); }
+#hero-manifesto h1 { text-wrap: balance; }
+#hero-manifesto p { text-wrap: pretty; }
+#hero-manifesto a { min-height: 44px; }
+#hero-manifesto a[href^="https://wa.me"] { box-shadow: 0 8px 24px rgba(0,0,0,.12); }
+#hero-manifesto a:active { transform: translateY(1px); }
+#hero-manifesto > div:last-child { width: calc(100% + 3rem); }
+html[data-theme="light"] #hero-manifesto {
+ --hero-gold: #98621e;
+ background-image: linear-gradient(90deg, #FAF8F5 0%, rgba(250,248,245,.97) 30%, rgba(250,248,245,.82) 44%, rgba(250,248,245,.28) 60%, rgba(250,248,245,.04) 76%), url('/karachi-feast-refined.png');
+ background-size: cover;
+ background-position: center right;
+}
+html[data-theme="light"] #hero-manifesto > div:first-child { display: none; }
+html[data-theme="light"] #hero-manifesto::before { content: ''; position: absolute; inset: 0; pointer-events: none; background-image: radial-gradient(#d9cebf 1px, transparent 1px); background-size: 28px 28px; opacity: .22; }
+html[data-theme="light"] #hero-manifesto h1 .italic { color: var(--hero-gold); }
+#hero-manifesto .hero-content > div > p { max-width: 30rem; }
+html[data-theme="light"] #hero-manifesto a[href^="https://wa.me"] { background: #1A1715; color: #FFFFFF; }
+html[data-theme="light"] #hero-manifesto a[href^="https://wa.me"]:hover { background: #835000; }
+html[data-theme="light"] #hero-manifesto .animate-marquee-linear .text-secondary { color: var(--hero-gold); }
+@media (min-width: 768px) {
+ #hero-manifesto > div:last-child { width: calc(100% + 6rem); }
+}
+@media (max-width: 767px) {
+ #hero-manifesto { padding-top: 2rem; padding-bottom: 2rem; }
+ #hero-manifesto > div:nth-child(3) { padding-top: 2.5rem; padding-bottom: 3rem; }
+ html[data-theme="light"] #hero-manifesto {
+  background-image: linear-gradient(90deg, rgba(250,248,245,.97), rgba(250,248,245,.84)), url('/karachi-feast-refined.png');
+  background-position: 65% center;
+ }
+ #hero-manifesto .animate-marquee-linear { animation-duration: 36s; }
+}
+@media (max-width: 767px) { #hero-manifesto .hero-dark-overlay { background: rgba(16,14,12,.78); } }
+
+#hero-manifesto .hero-location { padding: .625rem .75rem; border-radius: 4px; background: rgba(16,14,12,.82); color: #f4e5cb; }
+#hero-manifesto .hero-location .text-outline { color: inherit; }
+html[data-theme="light"] #hero-manifesto .hero-location { color: #594d44; background: rgba(250,248,245,.88); }
+
+@media (max-width: 767px) {
+ #hero-manifesto > div:nth-child(3) > div > p { font-size: 1rem; line-height: 1.8; }
+ #hero-manifesto h1 { margin-bottom: 1.5rem; }
+}
+
+@media (max-width: 767px) {
+ aside > a { width: 52px; height: 52px; padding: 0; justify-content: center; }
+ aside > a > div, aside > a > span:first-child { display: none; }
+}
+
+/* Let the fixed navigation float over a hero that begins at the document top. */
+#hero-manifesto { min-height: 100svh; padding-top: 6rem; padding-bottom: 0; }
+#hero-manifesto .hero-content { padding-top: clamp(1rem, 3svh, 2rem); padding-bottom: clamp(1.5rem, 4svh, 3rem); }
+@media (min-width: 768px) {
+ #hero-manifesto h1 { font-size: clamp(4.5rem, 12svh, 8rem); margin-bottom: 1.5rem; }
+ #hero-manifesto .hero-content > div { max-width: 64rem; }
+ #hero-manifesto .hero-content > div > :not(:last-child) { margin-block-end: 1.5rem; }
+ #hero-manifesto .hero-content > div > p { font-size: clamp(1.125rem, 2.5svh, 1.5rem); line-height: 1.6; }
+ #hero-manifesto .hero-content > div > div:first-child > span { margin-bottom: 1rem; }
+ #hero-manifesto .hero-content > div > div:last-child { padding-top: 1rem; }
+}
+@media (max-width: 767px) {
+ #hero-manifesto { padding-top: 5.5rem; }
+ #hero-manifesto .hero-content { padding-top: 2rem; padding-bottom: 2rem; }
+}
