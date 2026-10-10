@@ -8,6 +8,14 @@
   const theme = saved === 'light' || saved === 'dark' ? saved : (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
   document.documentElement.dataset.theme = theme;
   document.documentElement.classList.toggle('dark', theme === 'dark');
+  // Splash: once per browser session, never with reduced motion.
+  try {
+   if (!sessionStorage.getItem('dude-chacha-splash') && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    sessionStorage.setItem('dude-chacha-splash', '1');
+    document.documentElement.classList.add('splash-lock');
+    document.documentElement.style.setProperty('--splash-delay', '1700ms');
+   }
+  } catch {}
  })();
 </script>
 <meta content="width=device-width, initial-scale=1.0" name="viewport">

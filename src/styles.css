@@ -89,10 +89,49 @@
     }
     .hero-enter {
       animation: enter-up 520ms var(--ease-out) backwards;
-      animation-delay: calc(var(--i, 0) * 60ms + 80ms);
+      animation-delay: calc(var(--i, 0) * 60ms + 80ms + var(--splash-delay, 0ms));
     }
-    .nav-enter { animation: enter-down 450ms var(--ease-out) 60ms backwards; }
-    .concierge-enter { animation: enter-up 450ms var(--ease-out) 900ms backwards; }
+    .nav-enter { animation: enter-down 450ms var(--ease-out) backwards; animation-delay: calc(60ms + var(--splash-delay, 0ms)); }
+    .concierge-enter { animation: enter-up 450ms var(--ease-out) backwards; animation-delay: calc(900ms + var(--splash-delay, 0ms)); }
+
+    /* Splash: plays once per session, then lifts like a curtain. Click anywhere to skip. */
+    html.splash-lock, html.splash-lock body { overflow: hidden; }
+    .splash {
+      position: fixed; inset: 0; z-index: 300; display: grid; place-items: center;
+      background: var(--color-background, #100e0c);
+      border-bottom: 1px solid var(--color-secondary, #fdba45);
+      cursor: pointer;
+      transition: transform 650ms var(--ease-in-out);
+    }
+    .splash-exit { transform: translateY(-100%); }
+    .splash-inner { display: flex; flex-direction: column; align-items: center; gap: 1.25rem; padding: 0 1.5rem; text-align: center; }
+    .splash-eyebrow {
+      font-size: .6875rem; letter-spacing: .4em; text-transform: uppercase; color: var(--color-secondary);
+      animation: splash-fade 500ms ease 100ms backwards;
+    }
+    .splash-word {
+      display: flex; flex-wrap: wrap; justify-content: center; column-gap: .35em; margin: 0;
+      font-size: clamp(2.5rem, 11vw, 6rem); font-weight: 800; letter-spacing: .1em; line-height: 1.05;
+      color: var(--color-on-surface, #e8e1dd);
+    }
+    .splash-word > span { display: inline-block; overflow: hidden; padding-block: .08em; }
+    .splash-word > span > span {
+      display: inline-block;
+      animation: splash-rise 700ms var(--ease-out) backwards;
+      animation-delay: calc(200ms + var(--i, 0) * 120ms);
+    }
+    .splash-rule {
+      width: 4.5rem; height: 1px; background: var(--color-secondary);
+      transform-origin: center; animation: splash-rule 600ms var(--ease-out) 650ms backwards;
+    }
+    .splash-tag {
+      font-size: clamp(1.125rem, 3.5vw, 1.5rem); font-style: italic; color: var(--color-on-surface-variant);
+      animation: splash-fade-up 600ms var(--ease-out) 850ms backwards;
+    }
+    @keyframes splash-rise { from { transform: translateY(105%); } }
+    @keyframes splash-rule { from { transform: scaleX(0); } }
+    @keyframes splash-fade { from { opacity: 0; } }
+    @keyframes splash-fade-up { from { opacity: 0; transform: translateY(8px); } }
 
     /* Menu category switch: new courses bridge in instead of teleporting. */
     @keyframes menu-enter {

@@ -10,6 +10,7 @@ import ScrollProgress from './components/ScrollProgress';
 import Concierge from './components/Concierge';
 import Header from './components/Header';
 import Footer from './components/Footer';
+import Splash from './components/Splash';
 export default function App() {
  const [theme, setTheme] = useState(() => document.documentElement.dataset.theme || 'dark');
  useEffect(() => {
@@ -24,5 +25,5 @@ export default function App() {
   document.querySelectorAll('.reveal-item').forEach(item => { item.classList.remove('is-visible'); observer.observe(item); });
   return () => observer.disconnect();
  }, []);
- return <><a className="skip-link" href="#main-content">Skip to content</a><ScrollProgress /><Header theme={theme} onToggleTheme={() => setTheme(current => current === 'dark' ? 'light' : 'dark')} /><Concierge /><main id="main-content" className="w-full bg-background"><Hero /><Legends /><Textures /><MasterMenu /><Packages /><Chef /><HowToOrder /></main><Footer /></>;
+ return <><Splash /><a className="skip-link" href="#main-content">Skip to content</a><ScrollProgress /><Header theme={theme} onToggleTheme={() => setTheme(current => current === 'dark' ? 'light' : 'dark')} /><Concierge /><main id="main-content" className="w-full bg-background"><Hero /><Legends /><Textures /><MasterMenu /><Packages /><Chef /><HowToOrder /></main><Footer /></>;
 }
